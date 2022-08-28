@@ -8,7 +8,7 @@
           >
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn
+        <!-- <v-btn
           v-show="reserveBtnShow"
           href="/reserve"
           elevation="2"
@@ -16,7 +16,7 @@
           plain
           raised
           >預約 / Reserve</v-btn
-        >
+        > -->
         <v-card width="10px"></v-card>
         <v-btn
           :disabled="closeState"

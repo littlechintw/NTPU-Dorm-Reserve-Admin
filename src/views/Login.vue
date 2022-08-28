@@ -25,8 +25,7 @@
                 <v-text-field
                   v-model="stuid"
                   :rules="stuidRules"
-                  label="學號 / Student ID"
-                  type="number"
+                  label="帳號 / Account"
                   required
                 ></v-text-field>
                 <v-text-field
@@ -84,8 +83,7 @@ export default {
       valid: false,
       stuid: "",
       stuidRules: [
-        (v) => !!v || "請輸入學號",
-        (v) => (v && v.length === 9) || "請輸入學號正確格式",
+        (v) => !!v || "請輸入帳號",
       ],
       pwd: "",
       pwdRules: [(v) => !!v || "請輸入密碼"],
@@ -103,8 +101,8 @@ export default {
         this.tipsText = "";
         let self = this;
         axios
-          .post(config.apiurl + "/login", {
-            stu_id: this.stuid,
+          .post(config.apiurl + "/admin/login", {
+            id: this.stuid,
             pwd: this.pwd,
           })
           .then(function (response) {
@@ -115,7 +113,7 @@ export default {
               self.tipsText = response.data.message;
             } else {
               self.$cookie.set("token", response.data.session, 1);
-              self.$router.push("/reserve");
+              self.$router.push("/admin");
               location.reload();
             }
           })
@@ -127,7 +125,7 @@ export default {
   },
   mounted: function () {
     if (this.$cookie.get("token")) {
-      this.$router.push("/reserve");
+      this.$router.push("/admin");
     }
   },
 };

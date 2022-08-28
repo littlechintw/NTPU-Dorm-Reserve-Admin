@@ -12,20 +12,20 @@ const routes = [
       title: '北大宿舍開宿預約',
     },
   },
-  // {
-  //   path: '/:id?',
-  //   name: 'Random',
-  //   component: () => import('../views/Home.vue'),
-  //   meta: {
-  //     title: 'Hi | 北大宿舍開宿預約',
-  //   },
-  // },
   {
-    path: '/reserve',
-    name: 'Reserve',
-    component: () => import('../views/Reserve.vue'),
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/Admin.vue'),
     meta: {
-      title: '預約 | 北大宿舍開宿預約',
+      title: 'Admin | 北大宿舍開宿預約',
+    },
+  },
+  {
+    path: '/reserve_list',
+    name: 'Admin',
+    component: () => import('../views/ReserveList.vue'),
+    meta: {
+      title: '預約總表 | 北大宿舍開宿預約',
     },
   },
   {
