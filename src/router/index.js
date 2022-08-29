@@ -29,6 +29,14 @@ const routes = [
     },
   },
   {
+    path: '/edit_user',
+    name: 'Admin',
+    component: () => import('../views/EditUser.vue'),
+    meta: {
+      title: '預約總表 | 北大宿舍開宿預約',
+    },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),

@@ -1,6 +1,8 @@
 <template>
   <v-container fluid>
     <a href="/reserve_list">預約總表</a>
+    <br />
+    <a href="/edit_user">新增 / 編輯 / 刪除使用者</a>
   </v-container>
 </template>
 
