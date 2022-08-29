@@ -7,13 +7,7 @@
           <v-row align="center" justify="center" length><br /></v-row>
           <div v-show="formShow">
             <v-row align="center" justify="center" length>
-              <h3>請登入學生資訊系統帳號</h3>
-            </v-row>
-
-            <v-row align="center" justify="center" length>
-              <h5 style="color: gray">
-                Login with your student information system account.
-              </h5>
+              <h3>請登入後台帳號</h3>
             </v-row>
             <v-row align="center" justify="center" length>
               <v-form
