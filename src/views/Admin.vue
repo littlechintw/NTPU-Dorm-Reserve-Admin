@@ -21,10 +21,10 @@
       <v-row>
         <v-col cols="12">
           <!-- <v-row align="center" justify="center" length><br /></v-row> -->
-          <v-row align="center" justify="center" length>
+          <!-- <v-row align="center" justify="center" length>
             <h2>Yes, you can access me</h2>
           </v-row>
-          <v-row align="center" justify="center" length><br /></v-row>
+          <v-row align="center" justify="center" length><br /></v-row> -->
           <v-row align="center" justify="center" length>
             掃描報到 QRCode 或是輸入學號。
             掃 QRCode 前，指標要點到下方輸入框喔！
