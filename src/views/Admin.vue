@@ -137,7 +137,9 @@
                   required type="number" counter maxlength="10"
                   :disabled="(searchResponse.checkIn === true) && (searchResponse.checkIn_visitor_id !== null)">
                 </v-text-field>
-                <v-btn color="#87C1A2" class="mr-4" @click="checkIn">報到 / 更改</v-btn>
+                <v-btn color="#87C1A2" class="mr-4" @click="checkIn"
+                  :disabled="userCheckinForm.visitor && (userCheckinForm.visitorData.id === '' || userCheckinForm.visitorData.phone === '')">
+                  報到 / 更改</v-btn>
               </v-form>
             </v-row>
           </div>
