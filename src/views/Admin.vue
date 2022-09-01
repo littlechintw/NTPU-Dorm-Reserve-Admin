@@ -40,7 +40,7 @@
           </v-row>
           <v-row align="center" justify="center" length>
             <h3 style="background-color: red; color: white; width: 100%; text-align: center">{{
-              searchResponse.alert }}</h3>
+            searchResponse.alert }}</h3>
           </v-row>
           <v-row align="center" justify="center" length><br /></v-row>
           <!-- <v-row align="center" justify="center" length>
@@ -116,11 +116,11 @@
           </v-row> -->
             <v-row align="center" justify="center" length>
               <v-form ref="form" v-on:submit.prevent="findUser" lazy-validation>
-                <h4 v-show="searchResponse.reserve_parking !== '無'" style="color: red">
+                <h4 v-show="searchResponse.reserve_parking !== '無' && searchResponse.reserved" style="color: red">
                   看到此行請給予停車優惠券並選取
                 </h4>
                 <v-switch v-model="userCheckinForm.parking" :label="`停車優惠券: ${userCheckinForm.parking.toString()}`"
-                  v-show="searchResponse.reserve_parking !== '無'">
+                  v-show="searchResponse.reserve_parking !== '無' && searchResponse.reserved">
                 </v-switch>
                 <v-switch v-model="userCheckinForm.bill" :label="`確認繳費狀態: ${userCheckinForm.bill.toString()}`">
                 </v-switch>
