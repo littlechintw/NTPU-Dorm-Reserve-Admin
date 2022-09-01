@@ -362,6 +362,9 @@ export default {
     },
     findUser() {
       let self = this;
+      if (self.searchId.length > 15) {
+        return ""
+      }
       if (self.isSearch) {
         console.log("Already searching");
         return ""
