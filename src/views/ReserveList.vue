@@ -293,6 +293,9 @@ export default {
       this.verify_admin();
       this.csvDownloadUrlMaker();
     }
+    else {
+      this.$router.push("/login");
+    }
     this.window_height = window.innerHeight;
     this.window_width = window.innerWidth;
   },

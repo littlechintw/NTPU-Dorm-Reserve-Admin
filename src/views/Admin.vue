@@ -138,7 +138,7 @@
                   :disabled="(searchResponse.checkIn === true) && (searchResponse.checkIn_visitor_id !== null)">
                 </v-text-field>
                 <v-btn color="#87C1A2" class="mr-4" @click="checkIn"
-                  :disabled="userCheckinForm.visitor && (userCheckinForm.visitorData.id === '' || userCheckinForm.visitorData.phone === '')">
+                  :disabled="userCheckinForm.visitor && (userCheckinForm.visitorData.id.length === 10 || userCheckinForm.visitorData.phone.length === 10)">
                   報到 / 更改</v-btn>
               </v-form>
             </v-row>
@@ -428,6 +428,9 @@ export default {
     if (this.$cookie.get("token")) {
       this.loginStatus = true;
       this.verify_admin();
+    }
+    else {
+      this.$router.push("/login");
     }
     this.window_height = window.innerHeight;
     this.window_width = window.innerWidth;

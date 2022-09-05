@@ -318,6 +318,9 @@ export default {
       this.loginStatus = true;
       this.verify_admin();
     }
+    else {
+      this.$router.push("/login");
+    }
     this.window_height = window.innerHeight;
     this.window_width = window.innerWidth;
   },
