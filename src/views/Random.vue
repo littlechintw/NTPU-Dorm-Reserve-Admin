@@ -18,6 +18,12 @@
               style="max-width: 100px; padding-right: 30px;"></v-text-field>
             <v-btn @click="startLoad" color="yellow">抽選</v-btn>
           </v-row>
+          <v-row align="center" justify="center" length v-show="over">
+            <h3 style="background-color: black; color: white; width: 100%; text-align: center">抽選結果出爐</h3>
+          </v-row>
+          <v-row align="center" justify="center" length v-show="over">
+            <br />
+          </v-row>
           <v-row align="center" justify="center" length>
             <v-textarea clearable clear-icon="mdi-close-circle" label="中籤學號" v-model="resultList"
               style="max-width: 300px">
@@ -38,19 +44,22 @@ export default {
       itemList: "",
       itemCount: 1,
       resultList: "",
+      over: false,
     };
   },
   components: {
   },
   methods: {
     async startLoad() {
+      this.over = false;
       var idList;
       for (var i = 0;i < 50;i++) {
         idList = this.itemList.split(/\r?\n/);
         this.resultList = this.listToStr(this.selectRandomItem(idList, this.itemCount));
         await this.sleep(i**2 / 10);
       }
-      alert("抽選完成!");
+      // alert("抽選完成!");
+      this.over = true;
     },
     sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
