@@ -52,6 +52,14 @@ const routes = [
       title: 'Logout | 北大宿舍開宿預約',
     },
   },
+  {
+    path: '/random',
+    name: 'Random',
+    component: () => import('../views/Random.vue'),
+    meta: {
+      title: 'Random | 北大宿舍開宿預約',
+    },
+  },
 ]
 
 const router = new VueRouter({
