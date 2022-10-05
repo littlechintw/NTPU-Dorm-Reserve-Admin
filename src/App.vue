@@ -102,12 +102,8 @@ export default {
         })
         .catch(function (error) {
           console.log('API BAD')
-          self.
-          
-          
-          = false
+          self.apiStatus = false
           console.log(error)
-          
         });
     }
   },
