@@ -68,6 +68,7 @@
 </template>
 
 <script>
+const axios = require("axios");
 let Base64 = require("js-base64").Base64;
 var config = require("../config.json");
 export default {
