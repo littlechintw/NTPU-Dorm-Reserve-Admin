@@ -30,6 +30,12 @@
       </v-app-bar>
 
       <v-main>
+        <v-card>
+          <v-alert type="red" dense text dismissible v-show="!apiStatus">
+            API seem bad, refresh this page for some times. If not work, please contact IT to solve this problem.
+             {{ apiurl }}
+          </v-alert>
+        </v-card>
         <!-- <v-card>
           <v-alert type="red" dense text dismissible>
             系統將於 6/8 22:00 ~ 23:00 維護，將短暫無法使用，請您見諒！
@@ -70,6 +76,7 @@ export default {
     // HelloWorld,
   },
   data: () => ({
+    apiStatus: true,
     btn: {
       title: "LOGIN",
       url: "/login",
@@ -81,7 +88,31 @@ export default {
     Width: 0,
     closeState: false,
   }),
+  methods: {
+    checkApiAlive() {
+      let self = this;
+      this.apiurl = config.apiurl
+      axios({
+        method: 'get',
+        url: config.apiurl + "/monitor",
+      })
+        .then(function (response) {
+          console.log('API OK')
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log('API BAD')
+          self.
+          
+          
+          = false
+          console.log(error)
+          
+        });
+    }
+  },
   mounted() {
+    this.checkApiAlive()
     this.closeState = config.closeState;
     if (this.$cookie.get("token")) {
       this.btn.title = "LOGOUT";
