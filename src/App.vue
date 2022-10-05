@@ -96,6 +96,7 @@ export default {
       axios({
         method: 'get',
         url: config.apiurl + "/monitor",
+        timeout: 5000,
       })
         .then(function (response) {
           console.log('API OK')
