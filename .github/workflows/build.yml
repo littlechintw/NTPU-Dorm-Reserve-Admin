@@ -29,15 +29,14 @@ jobs:
     - name: Build 404 Page
       run: cp dist/index.html dist/404.html
       
-    - name: GH Pages deploy
-      uses: Cecilapp/GitHub-Pages-deploy@3.2.1
+    - name: GH Pages deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # A verified email.
         email: ${{ secrets.EMAIL }}
-        # Where static files are.
-        build_dir: dist
+        folder: dist # The folder the action should deploy.
         branch: gh-pages
         cname: ntpu-dorm-admin.littlechin.tw
 
