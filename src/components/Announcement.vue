@@ -1,10 +1,11 @@
 <template>
   <v-container fluid>
-    <a href="/admin">報到頁面</a>
-    <br />
-    <a href="/reserve_list">預約總表</a>
-    <br />
-    <a href="/edit_user">新增 / 編輯 / 刪除使用者</a>
+    <a href="/admin">報到頁面</a><br />
+    <a href="/reserve_list">預約總表</a><br />
+    <a href="/edit_user">新增 / 編輯 / 刪除使用者</a><br />
+    <a href="/events">編輯報到時間</a><br />
+    <a href="/config">伺服器設定</a><br />
+    <a href="/adminmember">管理者帳號</a><br />
   </v-container>
 </template>
 

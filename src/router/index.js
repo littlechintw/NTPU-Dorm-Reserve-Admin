@@ -33,7 +33,31 @@ const routes = [
     name: 'Admin',
     component: () => import('../views/EditUser.vue'),
     meta: {
-      title: '預約總表 | 北大宿舍開宿預約',
+      title: '編輯宿生 | 北大宿舍開宿預約',
+    },
+  },
+  {
+    path: '/config',
+    name: 'Config',
+    component: () => import('../views/Config.vue'),
+    meta: {
+      title: '參數設定 | 北大宿舍開宿預約',
+    },
+  },
+  {
+    path: '/events',
+    name: 'Events',
+    component: () => import('../views/Events.vue'),
+    meta: {
+      title: '編輯報到時間 | 北大宿舍開宿預約',
+    },
+  },
+  {
+    path: '/adminmember',
+    name: 'AdminMember',
+    component: () => import('../views/AdminMember.vue'),
+    meta: {
+      title: '管理者帳號 | 北大宿舍開宿預約',
     },
   },
   {
