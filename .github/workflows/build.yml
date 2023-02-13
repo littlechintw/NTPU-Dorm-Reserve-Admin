@@ -35,7 +35,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # A verified email.
-        email: ${{ secrets.EMAIL }}
+        email: littlechintw@gmail.com
         # Where static files are.
         build_dir: dist
         branch: gh-pages
