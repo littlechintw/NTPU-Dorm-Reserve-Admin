@@ -30,13 +30,15 @@ jobs:
       run: cp dist/index.html dist/404.html
       
     - name: GH Pages deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: Cecilapp/GitHub-Pages-deploy@3.2.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # A verified email.
         email: ${{ secrets.EMAIL }}
-        folder: dist # The folder the action should deploy.
+        # Where static files are.
+        build_dir: dist
         branch: gh-pages
-        cname: ntpu-dorm-admin.littlechin.tw
+        cname: ntpu-dorm.littlechin.tw
+
 
