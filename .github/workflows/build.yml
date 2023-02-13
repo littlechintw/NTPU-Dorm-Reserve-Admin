@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: GH Pages deploy
+    - name: GH Pages deploy action
       uses: Cecilapp/GitHub-Pages-deploy@3.2.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
