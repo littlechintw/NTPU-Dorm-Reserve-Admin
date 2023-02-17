@@ -61,6 +61,22 @@ const routes = [
     },
   },
   {
+    path: '/status',
+    name: 'Status',
+    component: () => import('../views/Status.vue'),
+    meta: {
+      title: 'Status | 北大宿舍開宿預約',
+    },
+  },
+  {
+    path: '/visitor',
+    name: 'Visitor',
+    component: () => import('../views/Visitor.vue'),
+    meta: {
+      title: '宿舍內訪客 | 北大宿舍開宿預約',
+    },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),
