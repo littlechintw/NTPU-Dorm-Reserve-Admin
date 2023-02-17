@@ -3,7 +3,7 @@
     <div class="inapp">
       <v-app-bar app dark dense flat color="#264653">
         <v-toolbar-title>
-          <a href="/" style="color: white; text-decoration: none"
+          <a href="/admin" style="color: white; text-decoration: none"
             >北大宿舍預約系統</a
           >
         </v-toolbar-title>

@@ -15,8 +15,8 @@
   <!-- <v-row align="center" justify="center" length>
     {{ status }}
   </v-row> -->
-  <v-container v-show="isTrueAdmin" fluid>
-    <Announcement />
+  <v-container v-show="isAdmin" fluid>
+    <Announcement v-show="isTrueAdmin" />
     <v-row align="center" justify="center" length><br /></v-row>
     <v-row align="center" justify="center" length>
       <h1>現在預約 / 報到狀態</h1>
