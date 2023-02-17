@@ -48,6 +48,12 @@
           </v-row> -->
 
           <div v-show="searchUserExist">
+            <v-row align="center" justify="center" length v-show="searchResponse.checkIn_visitor_in">
+              <v-btn x-large color="red" outlined class="mr-4" @click="visitorCheckOut">訪客掰掰 / Say goodbye to the visitor</v-btn>
+            </v-row>
+            <v-row align="center" justify="center" length v-show="searchResponse.checkIn_visitor_in">
+              <br />
+            </v-row>
             <v-row align="center" justify="center" length>
               <!-- If checkIn is true show blue, or show pink -->
 
@@ -394,6 +400,64 @@ export default {
             self.searchResponse = response.data.message
             self.getUserDataInit(response.data.message)
             self.searchUserData = self.makeUserDataTableData(response.data.message)
+            self.searchUserExist = true
+            self.searchId = ""
+            self.isSearch = false
+          } else {
+            console.log(response.data)
+          }
+          if (response.data.code === 403) {
+            alert("Who's this user?");
+            self.searchId = ""
+            self.isSearch = false
+            // self.$router.push("/logout");
+          }
+        })
+        .catch(function (error) {
+          if (error.response.status === 403) {
+            self.$router.push("/logout");
+          }
+          else {
+            alert(error);
+          }
+        });
+    },
+    visitorCheckOut(){
+      let self = this;
+      if (self.isSearch) {
+        console.log("Already searching");
+        return ""
+      }
+      self.initOverlay = true;
+      self.isSearch = true
+      self.searchResponse = { "status": "Searching..." }
+      self.searchUserExist = false
+      axios({
+        method: 'post',
+        url: config.apiurl + "/admin/visitor_checkout",
+        headers: {
+          'Authorization': self.$cookie.get("token"),
+        },
+        data: {
+          id: self.userCheckinForm.id,
+          parking: self.userCheckinForm.parking,
+          bill: self.userCheckinForm.bill,
+          card: self.userCheckinForm.card,
+          visitor: self.userCheckinForm.visitor,
+          visitorId: self.userCheckinForm.visitorData.id,
+          visitorPhone: self.userCheckinForm.visitorData.phone,
+        },
+      })
+        .then(function (response) {
+          self.initOverlay = false;
+          console.log(response.data);
+          self.initOverlay = false;
+          if (response.data.code === 200) {
+            // console.log(response.data)
+            self.searchResponse = response.data.message
+            self.getUserDataInit(response.data.message)
+            self.searchUserData = self.makeUserDataTableData(response.data.message)
+            self.alertText = response.data.message.alert
             self.searchUserExist = true
             self.searchId = ""
             self.isSearch = false
