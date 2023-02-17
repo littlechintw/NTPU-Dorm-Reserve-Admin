@@ -14,6 +14,10 @@ Vue.use(VueCookie)
 import VueQRCodeComponent from 'vue-qrcode-component'
 Vue.component('qr-code', VueQRCodeComponent)
 
+// QRcode reader
+import VueQrcodeReader from "vue-qrcode-reader";
+Vue.use(VueQrcodeReader);
+
 // GA
 import VueAnalytics from 'vue-analytics'
 Vue.use(VueAnalytics, {
