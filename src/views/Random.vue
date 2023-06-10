@@ -5,7 +5,7 @@
         <v-col cols="12">
           <v-row align="center" justify="center" length><br /></v-row>
           <v-row align="center" justify="center" length>
-            <h1>床位抽選</h1>
+            <h1>抽選器</h1>
           </v-row>
           <v-row align="center" justify="center" length><br /></v-row>
           <v-row align="center" justify="center" length>
