@@ -112,7 +112,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/admin',
+  base: process.env.BASE_URL,
   routes
 })
 
