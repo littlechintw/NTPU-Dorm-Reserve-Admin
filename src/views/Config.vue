@@ -16,9 +16,12 @@
     <v-container v-show="isTrueAdmin" fluid>
       <Announcement />
       <v-row align="center" justify="center" length><br /></v-row>
+      <br />
+      <p>RESERVE_START 與 RESERVE_END 為預約系統開啟與關閉時間，格式應為 2022-08-26 13:00:00</p>
+      <br />
       <v-row align="center" justify="center" length v-for="configData in serverConfig" :key="configData">
         <div style="width: 300px">
-          <v-text-field v-model="configData.data" :label="configData.title" required ></v-text-field>
+          <v-text-field v-model="configData.data" :label="configData.title" required></v-text-field>
         </div>
       </v-row>
       <v-row align="center" justify="center" length>
@@ -197,6 +200,7 @@ export default {
     filter: hue-rotate(-360deg);
   }
 }
+
 .rainbow-text {
   display: inline-block;
   position: relative;

@@ -46,7 +46,7 @@
           </v-row>
           <v-row align="center" justify="center" length>
             <h3 style="background-color: red; color: white; width: 100%; text-align: center">{{
-            searchResponse.alert }}</h3>
+              searchResponse.alert }}</h3>
           </v-row>
           <v-row align="center" justify="center" length><br /></v-row>
           <!-- <v-row align="center" justify="center" length>
@@ -55,7 +55,8 @@
 
           <div v-show="searchUserExist">
             <v-row align="center" justify="center" length v-show="searchResponse.checkIn_visitor_in">
-              <v-btn x-large color="red" outlined class="mr-4" @click="visitorCheckOut">訪客掰掰 / Say goodbye to the visitor</v-btn>
+              <v-btn x-large color="red" outlined class="mr-4" @click="visitorCheckOut">訪客掰掰 / Say goodbye to the
+                visitor</v-btn>
             </v-row>
             <v-row align="center" justify="center" length v-show="searchResponse.checkIn_visitor_in">
               <br />
@@ -128,17 +129,17 @@
           </v-row> -->
             <v-row align="center" justify="center" length>
               <v-form ref="form" v-on:submit.prevent="findUser" lazy-validation>
-                <h4 v-show="searchResponse.reserve_parking !== '無' && searchResponse.reserved" style="color: red">
+                <!-- <h4 v-show="searchResponse.reserve_parking !== '無' && searchResponse.reserved" style="color: red">
                   看到此行請給予停車優惠券並選取
                 </h4>
                 <v-switch v-model="userCheckinForm.parking" :label="`停車優惠券: ${userCheckinForm.parking.toString()}`"
                   v-show="searchResponse.reserve_parking !== '無' && searchResponse.reserved">
-                </v-switch>
+                </v-switch> -->
                 <v-switch v-model="userCheckinForm.bill" :label="`確認繳費狀態: ${userCheckinForm.bill.toString()}`">
                 </v-switch>
                 <v-text-field v-model="userCheckinForm.card" label="臨時卡" required type="number" counter maxlength="5">
                 </v-text-field>
-                <v-switch v-model="userCheckinForm.visitor" :label="`訪客: ${userCheckinForm.visitor.toString()}`"
+                <!-- <v-switch v-model="userCheckinForm.visitor" :label="`訪客: ${userCheckinForm.visitor.toString()}`"
                   :disabled="(searchResponse.checkIn === true) && (searchResponse.checkIn_visitor_id !== null)">
                 </v-switch>
                 <v-text-field v-show="userCheckinForm.visitor" v-model="userCheckinForm.visitorData.id" label="訪客身分證"
@@ -148,7 +149,7 @@
                 <v-text-field v-show="userCheckinForm.visitor" v-model="userCheckinForm.visitorData.phone" label="訪客手機"
                   required type="number" counter maxlength="10"
                   :disabled="(searchResponse.checkIn === true) && (searchResponse.checkIn_visitor_id !== null)">
-                </v-text-field>
+                </v-text-field> -->
                 <v-btn color="#87C1A2" class="mr-4" @click="checkIn"
                   :disabled="userCheckinForm.visitor && (userCheckinForm.visitorData.id.length !== 10 || userCheckinForm.visitorData.phone.length !== 10)">
                   報到 / 更改</v-btn>
@@ -301,7 +302,7 @@ export default {
         else data.checkIn_parking = "未領取"
         if (data.checkIn_bill === "1") data.checkIn_bill = "已繳費"
         else data.checkIn_bill = "未繳費"
-        
+
         tableData.push({ title: "報到資料登錄時間", data: data.checkIn_time })
         tableData.push({ title: "優惠券領取", data: data.checkIn_parking })
         tableData.push({ title: "繳費證明", data: data.checkIn_bill })
@@ -313,12 +314,12 @@ export default {
       }
       return tableData
     },
-  //   { "checkIn": true, "checkIn_bill": "1", "checkIn_card": "123", "checkIn_parking": "1", "checkIn_time":
-  // "2022-08-21 17:57:32", "checkIn_visitor_end": "2022-08-21 17:57:32", "checkIn_visitor_id": "A123456789",
-  //   "checkIn_visitor_in": false, "checkIn_visitor_phone": "0988888888", "checkIn_visitor_start": "2022-08-21
-  // 17: 57: 32", "dorm": "morn", "error": false, "health": "1", "health_phone": "0983122627", "health_rule1": false,
-  // "health_rule2": false, "id": "410885045", "name": "YC", "reserve_event_id": "9/1 09~12", "reserve_parking": "
-  // 878hj", "reserve_time": "2022 - 08 - 21 17: 57: 32", "reserved": true, "room": "310 - 1" }
+    //   { "checkIn": true, "checkIn_bill": "1", "checkIn_card": "123", "checkIn_parking": "1", "checkIn_time":
+    // "2022-08-21 17:57:32", "checkIn_visitor_end": "2022-08-21 17:57:32", "checkIn_visitor_id": "A123456789",
+    //   "checkIn_visitor_in": false, "checkIn_visitor_phone": "0988888888", "checkIn_visitor_start": "2022-08-21
+    // 17: 57: 32", "dorm": "morn", "error": false, "health": "1", "health_phone": "0983122627", "health_rule1": false,
+    // "health_rule2": false, "id": "410885045", "name": "YC", "reserve_event_id": "9/1 09~12", "reserve_parking": "
+    // 878hj", "reserve_time": "2022 - 08 - 21 17: 57: 32", "reserved": true, "room": "310 - 1" }
     checkIn() {
       let self = this;
       if (self.isSearch) {
@@ -388,7 +389,7 @@ export default {
       }
       self.initOverlay = true;
       self.isSearch = true
-      self.searchResponse = {"status": "Searching..."}
+      self.searchResponse = { "status": "Searching..." }
       self.searchUserExist = false
       axios({
         method: 'post',
@@ -431,7 +432,7 @@ export default {
           }
         });
     },
-    visitorCheckOut(){
+    visitorCheckOut() {
       let self = this;
       if (self.isSearch) {
         console.log("Already searching");
@@ -536,6 +537,7 @@ export default {
     filter: hue-rotate(-360deg);
   }
 }
+
 .rainbow-text {
   display: inline-block;
   position: relative;

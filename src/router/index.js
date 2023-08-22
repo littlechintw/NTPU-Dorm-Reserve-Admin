@@ -49,7 +49,7 @@ const routes = [
     name: 'Events',
     component: () => import('../views/Events.vue'),
     meta: {
-      title: '編輯報到時間 | 北大宿舍開宿預約',
+      title: '編輯報到列表 | 北大宿舍開宿預約',
     },
   },
   {

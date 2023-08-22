@@ -37,7 +37,7 @@
           </v-row>
           <v-row align="center" justify="center" length>
             <h3 style="background-color: red; color: white; width: 100%; text-align: center">{{
-            searchResponse.alert }}</h3>
+              searchResponse.alert }}</h3>
           </v-row>
           <v-row align="center" justify="center" length><br /></v-row>
 
@@ -76,9 +76,11 @@
                 </v-radio-group>
                 <v-text-field v-model="userEditForm.room" label="房床號（e.q. 310-1）" required></v-text-field>
                 <v-btn color="#87C1A2" class="mr-4" @click="editUser('a')" v-show="!searchUserExist"
-                  :disabled="userEditForm.dorm === '' || userEditForm.room === '' || userEditForm.name === ''">新增 / Add</v-btn>
+                  :disabled="userEditForm.dorm === '' || userEditForm.room === '' || userEditForm.name === ''">新增 /
+                  Add</v-btn>
                 <v-btn color="#87C1A2" class="mr-4" @click="editUser('e')" v-show="searchUserExist">更改 / Edit</v-btn>
                 <v-btn color="red" class="mr-4" @click="editUser('d')" v-show="searchUserExist">刪除 / Delete</v-btn>
+                <v-btn color="orange" class="mr-4" @click="editUser('dc')" v-show="searchResponse.checkIn">取消報到</v-btn>
               </v-form>
             </v-row>
 
@@ -182,12 +184,12 @@ export default {
       this.userEditForm.dorm = data.dormO
       this.userEditForm.room = data.room
     },
-  //   { "checkIn": true, "checkIn_bill": "1", "checkIn_card": "123", "checkIn_parking": "1", "checkIn_time":
-  // "2022-08-21 17:57:32", "checkIn_visitor_end": "2022-08-21 17:57:32", "checkIn_visitor_id": "A123456789",
-  //   "checkIn_visitor_in": false, "checkIn_visitor_phone": "0988888888", "checkIn_visitor_start": "2022-08-21
-  // 17: 57: 32", "dorm": "morn", "error": false, "health": "1", "health_phone": "0983122627", "health_rule1": false,
-  // "health_rule2": false, "id": "410885045", "name": "YC", "reserve_event_id": "9/1 09~12", "reserve_parking": "
-  // 878hj", "reserve_time": "2022 - 08 - 21 17: 57: 32", "reserved": true, "room": "310 - 1" }
+    //   { "checkIn": true, "checkIn_bill": "1", "checkIn_card": "123", "checkIn_parking": "1", "checkIn_time":
+    // "2022-08-21 17:57:32", "checkIn_visitor_end": "2022-08-21 17:57:32", "checkIn_visitor_id": "A123456789",
+    //   "checkIn_visitor_in": false, "checkIn_visitor_phone": "0988888888", "checkIn_visitor_start": "2022-08-21
+    // 17: 57: 32", "dorm": "morn", "error": false, "health": "1", "health_phone": "0983122627", "health_rule1": false,
+    // "health_rule2": false, "id": "410885045", "name": "YC", "reserve_event_id": "9/1 09~12", "reserve_parking": "
+    // 878hj", "reserve_time": "2022 - 08 - 21 17: 57: 32", "reserved": true, "room": "310 - 1" }
     editUser(func) {
       let self = this;
       if (self.isSearch) {
@@ -257,7 +259,7 @@ export default {
       self.initOverlay = true;
       self.isSearch = true
       self.firstSearch = true
-      self.searchResponse = {"status": "Searching..."}
+      self.searchResponse = { "status": "Searching..." }
       self.searchUserExist = false
       let idTmp = self.searchId
       axios({
@@ -337,6 +339,7 @@ export default {
     filter: hue-rotate(-360deg);
   }
 }
+
 .rainbow-text {
   display: inline-block;
   position: relative;

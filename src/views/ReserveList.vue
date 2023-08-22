@@ -51,7 +51,7 @@
                 <h3 style="color: #2b7a78">{{ item.d }}</h3>
               </template>
 
-              <template v-slot:item.p="{ item }">
+              <!-- <template v-slot:item.p="{ item }">
                 <h3 v-show="item.p === 'n'" style="color: #2b7a78">❌</h3>
                 <h3 v-show="item.p !== 'n'" style="color: #2b7a78">
                   {{ item.p }}
@@ -61,7 +61,7 @@
               <template v-slot:item.h="{ item }">
                 <h3 v-show="item.h === '0'" style="color: #2b7a78">❌</h3>
                 <h3 v-show="item.h !== '0'" style="color: #2b7a78">✔️</h3>
-              </template>
+              </template> -->
 
               <template v-slot:item.c="{ item }">
                 <h3 v-show="item.c === 'n'" style="color: #2b7a78">❌</h3>
@@ -130,11 +130,11 @@ export default {
         { text: "日期", value: "d" },
         { text: "學號", value: "s" },
         { text: "棟別", value: "b" },
-        { text: "停車券", value: "p" },
-        { text: "是否健康", value: "h" },
+        // { text: "停車券", value: "p" },
+        // { text: "是否健康", value: "h" },
         { text: "報到", value: "c" },
-        { text: "訪客是否在宿舍", value: "vi" },
-        { text: "訪客開始時間", value: "vs" },
+        // { text: "訪客是否在宿舍", value: "vi" },
+        // { text: "訪客開始時間", value: "vs" },
         { text: "刪除", value: "de" },
       ],
 
@@ -312,6 +312,7 @@ export default {
     filter: hue-rotate(-360deg);
   }
 }
+
 .rainbow-text {
   display: inline-block;
   position: relative;
