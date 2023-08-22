@@ -1,5 +1,5 @@
 {
-    "apiurl": "http://54.179.18.195:5000/",
-    "realapiurl": "http://54.179.18.195:5000/",
+    "apiurl": "https://ntpudorm.littlechin.tw/api",
+    "realapiurl": "https://ntpudorm.littlechin.tw/api",
     "closeState": false
 }
