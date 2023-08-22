@@ -8,6 +8,7 @@
     <a href="/adminmember">管理者帳號</a><br />
     <a href="/status">現在預約 / 報到狀態</a><br />
     <a href="/visitor">宿舍內訪客</a><br />
+    <a href="/studentsExcelUpload">宿生資料 Excel 上傳</a><br />
   </v-container>
 </template>
 
@@ -37,6 +38,6 @@ red {
 
 table,
 td {
-    border: 1px solid #333;
+  border: 1px solid #333;
 }
 </style>

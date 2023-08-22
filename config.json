@@ -1,4 +1,5 @@
 {
-    "apiurl": "https://23ab-120-126-194-208.au.ngrok.io",
+    "apiurl": "http://127.0.0.1:4777",
+    "realapiurl": "http://54.179.18.195:5000/",
     "closeState": false
 }

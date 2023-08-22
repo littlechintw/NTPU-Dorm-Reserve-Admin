@@ -100,6 +100,14 @@ const routes = [
       title: 'Random | 北大宿舍開宿預約',
     },
   },
+  {
+    path: '/studentsExcelUpload',
+    name: 'StudentsExcelUpload',
+    component: () => import('../views/StudentsExcelUpload.vue'),
+    meta: {
+      title: '宿生 Excel 上傳 | 北大宿舍開宿預約',
+    },
+  },
 ]
 
 const router = new VueRouter({
