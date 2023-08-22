@@ -76,13 +76,13 @@
                 </v-icon>
                 報到狀態 {{ searchResponse.checkIn }}
               </v-chip>
-              <v-chip class="ma-2" label text-color="white" :color="chipColor(!searchResponse.checkIn_visitor_in)"
+              <!-- <v-chip class="ma-2" label text-color="white" :color="chipColor(!searchResponse.checkIn_visitor_in)"
                 v-show="searchResponse.checkIn">
                 <v-icon left>
                   mdi-account-multiple
                 </v-icon>
                 訪客狀態 {{ searchResponse.checkIn_visitor_in }}
-              </v-chip>
+              </v-chip> -->
             </v-row>
             <!-- <v-row align="center" justify="center" length>
             姓名 / Name: {{ searchResponse.name }}
@@ -296,21 +296,21 @@ export default {
       tableData.push({ title: "宿舍", data: data.dorm + " " + data.room })
       tableData.push({ title: "預計報到時間", data: data.reserve_event })
       if (data.reserve_parking === 'no') data.reserve_parking = '無'
-      tableData.push({ title: "停車優惠券", data: data.reserve_parking })
+      // tableData.push({ title: "停車優惠券", data: data.reserve_parking })
       if (data.checkIn === true) {
-        if (data.checkIn_parking === "1") data.checkIn_parking = "已領取"
-        else data.checkIn_parking = "未領取"
-        if (data.checkIn_bill === "1") data.checkIn_bill = "已繳費"
-        else data.checkIn_bill = "未繳費"
+        // if (data.checkIn_parking === "1") data.checkIn_parking = "已領取"
+        // else data.checkIn_parking = "未領取"
+        // if (data.checkIn_bill === "1") data.checkIn_bill = "已繳費"
+        // else data.checkIn_bill = "未繳費"
 
         tableData.push({ title: "報到資料登錄時間", data: data.checkIn_time })
-        tableData.push({ title: "優惠券領取", data: data.checkIn_parking })
+        // tableData.push({ title: "優惠券領取", data: data.checkIn_parking })
         tableData.push({ title: "繳費證明", data: data.checkIn_bill })
         tableData.push({ title: "臨時卡編號", data: data.checkIn_card })
-        tableData.push({ title: "訪客身分證", data: data.checkIn_visitor_id })
-        tableData.push({ title: "訪客電話", data: data.checkIn_visitor_phone })
-        tableData.push({ title: "訪客開始時間", data: data.checkIn_visitor_start })
-        tableData.push({ title: "訪客結束時間", data: data.checkIn_visitor_end })
+        // tableData.push({ title: "訪客身分證", data: data.checkIn_visitor_id })
+        // tableData.push({ title: "訪客電話", data: data.checkIn_visitor_phone })
+        // tableData.push({ title: "訪客開始時間", data: data.checkIn_visitor_start })
+        // tableData.push({ title: "訪客結束時間", data: data.checkIn_visitor_end })
       }
       return tableData
     },
