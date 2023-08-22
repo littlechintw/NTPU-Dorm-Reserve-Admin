@@ -3,9 +3,7 @@
     <div class="inapp">
       <v-app-bar app dark dense flat color="#264653">
         <v-toolbar-title>
-          <a href="/admin" style="color: white; text-decoration: none"
-            >北大宿舍預約系統</a
-          >
+          <a href="/admin/admin" style="color: white; text-decoration: none">北大宿舍預約系統 後台</a>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <!-- <v-btn
@@ -18,22 +16,14 @@
           >預約 / Reserve</v-btn
         > -->
         <v-card width="10px"></v-card>
-        <v-btn
-          :disabled="closeState"
-          :href="btn.url"
-          elevation="2"
-          outlined
-          plain
-          raised
-          >{{ btn.title }}</v-btn
-        >
+        <v-btn :disabled="closeState" :href="btn.url" elevation="2" outlined plain raised>{{ btn.title }}</v-btn>
       </v-app-bar>
 
       <v-main>
         <v-card>
           <v-alert type="red" dense text dismissible v-show="!apiStatus">
             API seem bad, refresh this page for some times. If not work, please contact IT to solve this problem.
-             {{ apiurl }}
+            {{ apiurl }}
           </v-alert>
         </v-card>
         <!-- <v-card>
@@ -80,7 +70,7 @@ export default {
     apiStatus: true,
     btn: {
       title: "LOGIN",
-      url: "/login",
+      url: "/admin/login",
     },
     reserveBtnShow: false,
     account: "",
@@ -129,6 +119,7 @@ export default {
 
 <style>
 @import "./assets/font/font.css";
+
 /* div {
   font-family: Open Huninn;
 } */
@@ -136,6 +127,7 @@ export default {
   width: 80%;
   margin-left: 10%;
 }
+
 #app {
   font-family: Open Huninn;
 }
