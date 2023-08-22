@@ -1,5 +1,5 @@
 {
-    "apiurl": "http://127.0.0.1:4777",
+    "apiurl": "http://54.179.18.195:5000/",
     "realapiurl": "http://54.179.18.195:5000/",
     "closeState": false
 }
