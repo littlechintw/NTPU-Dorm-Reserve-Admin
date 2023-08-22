@@ -3,7 +3,7 @@
     <div class="inapp">
       <v-app-bar app dark dense flat color="#264653">
         <v-toolbar-title>
-          <a href="/admin/admin" style="color: white; text-decoration: none">北大宿舍預約系統 後台</a>
+          <a href="/admin" style="color: white; text-decoration: none">北大宿舍預約系統 後台</a>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <!-- <v-btn
@@ -70,7 +70,7 @@ export default {
     apiStatus: true,
     btn: {
       title: "LOGIN",
-      url: "/admin/login",
+      url: "/login",
     },
     reserveBtnShow: false,
     account: "",
