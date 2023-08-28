@@ -46,8 +46,7 @@
           <br /><br />
           <v-row align="center" justify="center" length>
             <template>
-              <v-data-table :headers="headers" :items="insertStudentList" class="elevation-1" :items-per-page="50"
-                hide-default-footer>
+              <v-data-table :headers="headers" :items="insertStudentList" class="elevation-1" hide-default-footer>
                 <!-- <template v-slot:item.id="{ item }">
               <v-text-field v-model="item.name" label="名稱" required></v-text-field>
             </template>
