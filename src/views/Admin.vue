@@ -33,6 +33,9 @@
             <v-form ref="form" v-on:submit.prevent="findUser" lazy-validation>
               <v-text-field v-model="searchId" label="帳號 / Account" required></v-text-field>
               <v-btn :disabled="searchId === ''" color="#87C1A2" class="mr-4" @click="findUser">搜尋 / 訪客離開</v-btn>
+              <v-chip v-show="!press_checkin_btn" class="ma-2" color="red" outlined>
+                還未按下報到 / 送出按鈕
+              </v-chip>
             </v-form>
           </v-row>
           <v-row align="center" justify="center" length v-if="window_width < 768">
@@ -150,6 +153,11 @@
                   required type="number" counter maxlength="10"
                   :disabled="(searchResponse.checkIn === true) && (searchResponse.checkIn_visitor_id !== null)">
                 </v-text-field> -->
+                <br />
+                <v-chip v-show="!press_checkin_btn" class="ma-2" color="red" outlined>
+                  還未按下報到 / 送出按鈕
+                </v-chip>
+                <br />
                 <v-btn color="#87C1A2" class="mr-4" @click="checkIn"
                   :disabled="userCheckinForm.visitor && (userCheckinForm.visitorData.id.length !== 10 || userCheckinForm.visitorData.phone.length !== 10)">
                   報到 / 更改</v-btn>
@@ -207,6 +215,8 @@ export default {
 
       camera: "off",
       camera_show: false,
+
+      press_checkin_btn: true,
     };
   },
   components: {
@@ -359,6 +369,7 @@ export default {
             self.searchUserExist = true
             self.searchId = ""
             self.isSearch = false
+            self.press_checkin_btn = true
           } else {
             console.log(response.data)
           }
@@ -387,6 +398,7 @@ export default {
         console.log("Already searching");
         return ""
       }
+      self.press_checkin_btn = false
       self.initOverlay = true;
       self.isSearch = true
       self.searchResponse = { "status": "Searching..." }
