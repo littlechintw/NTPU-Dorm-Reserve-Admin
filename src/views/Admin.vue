@@ -35,7 +35,7 @@
               <v-btn :disabled="searchId === ''" color="#87C1A2" class="mr-4" @click="findUser">搜尋 / 訪客離開</v-btn>
             </v-form>
           </v-row>
-          <v-row align="center" justify="center" length v-if="window_width < 400">
+          <v-row align="center" justify="center" length v-if="window_width < 768">
             <v-btn class="ma-2" rounded color="info" @click="camaraStatus">
               <v-icon left>mdi-camera</v-icon> 開啟 / 關閉相機
             </v-btn>
