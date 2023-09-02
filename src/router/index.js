@@ -108,6 +108,14 @@ const routes = [
       title: '宿生 Excel 上傳 | 北大宿舍開宿預約',
     },
   },
+  {
+    path: '/doneForAllTasks',
+    name: 'DoneForAllTasks',
+    component: () => import('../views/DoneForAllTasks.vue'),
+    meta: {
+      title: '刪除所有資料 | 北大宿舍開宿預約',
+    },
+  }
 ]
 
 const router = new VueRouter({

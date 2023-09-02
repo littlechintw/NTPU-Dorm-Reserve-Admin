@@ -19,42 +19,40 @@ export default {
       urlList: [
         {
           url: '/admin',
-          title: '報到頁面',
-        },
-        {
-          url: '/reserve_list',
-          title: '預約總表',
+          title: '預約報到中 | 報到頁面',
         },
         {
           url: '/edit_user',
-          title: '新增 / 編輯 / 刪除使用者',
+          title: '預約報到中 | 新增 / 編輯 / 刪除使用者',
         },
         {
           url: '/events',
-          title: '編輯報到列表',
+          title: '預約報到中 | 編輯報到時間列表',
         },
         {
-          url: '/adminmember',
-          title: '管理者帳號',
+          url: '/reserve_list',
+          title: '預約報到中 | 預約總表',
         },
         {
           url: '/status',
-          title: '現在預約 / 報到狀態',
+          title: '預約報到中 | 現在預約 / 報到狀態',
+        },
+        {
+          url: '/adminmember',
+          title: '預約報到前 | 管理者帳號',
         },
         {
           url: '/config',
-          title: '系統開放時間設定',
+          title: '預約報到前 | 系統開放時間設定',
         },
         {
           url: '/studentsExcelUpload',
-          title: '宿生資料 Excel 上傳',
+          title: '預約報到前 | 宿生資料 Excel 上傳',
         },
-      ],
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
+        {
+          url: '/doneForAllTasks',
+          title: '預約報到後 | 刪除所有資料',
+        },
       ],
     };
   },
