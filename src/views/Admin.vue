@@ -17,6 +17,10 @@
       <Announcement />
     </v-container>
 
+    <v-container v-show="!isTrueAdmin" fluid>
+      <Announcement_Master />
+    </v-container>
+
     <v-container v-show="isAdmin" fluid>
       <v-row>
         <v-col cols="12">
@@ -179,6 +183,7 @@
 <script>
 import About from "../components/About";
 import Announcement from "../components/Announcement.vue";
+import Announcement_Master from "../components/Announcement_master.vue";
 const axios = require("axios");
 var config = require("../../config.json");
 // let Base64 = require("js-base64").Base64;
@@ -222,6 +227,7 @@ export default {
   components: {
     About,
     Announcement,
+    Announcement_Master,
   },
   methods: {
     verify_admin() {

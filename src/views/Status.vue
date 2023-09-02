@@ -12,45 +12,44 @@
         </v-col>
       </v-row>
     </v-container>
-  <!-- <v-row align="center" justify="center" length>
-    {{ status }}
-  </v-row> -->
-  <v-container v-show="isAdmin" fluid>
-    <Announcement v-show="isTrueAdmin" />
-    <v-row align="center" justify="center" length><br /></v-row>
-    <v-row align="center" justify="center" length>
-      <h1>現在預約 / 報到狀態</h1>
-    </v-row>
-    <v-row align="center" justify="center" length>
-      <h3 style="color: red">資料讀取需要久一些</h3>
-    </v-row>
-    <v-row align="center" justify="center" length>
-      <div>
-        <h2>曉日</h2>
-        <v-data-table :headers="headers" :items="status.sun" class="elevation-1" hide-default-footer
-          items-per-page="100"></v-data-table>
+
+    <v-container v-show="isAdmin" fluid>
+      <Announcement v-show="isTrueAdmin" />
+      <Announcement_Master v-show="!isTrueAdmin" />
+      <v-row align="center" justify="center" length><br /></v-row>
+      <v-row align="center" justify="center" length>
+        <h1>現在預約 / 報到狀態</h1>
+      </v-row>
+      <v-row align="center" justify="center" length>
+        <h3 style="color: red">資料讀取需要久一些</h3>
+      </v-row>
+      <v-row align="center" justify="center" length>
+        <div>
+          <h2>曉日</h2>
+          <v-data-table :headers="headers" :items="status.sun" class="elevation-1" hide-default-footer
+            items-per-page="100"></v-data-table>
+          <br />
+
+          <h2>皓月</h2>
+          <v-data-table :headers="headers" :items="status.moon" class="elevation-1" hide-default-footer
+            items-per-page="100"></v-data-table>
+          <br />
+
+          <h2>繁星</h2>
+          <v-data-table :headers="headers" :items="status.star" class="elevation-1" hide-default-footer
+            items-per-page="100"></v-data-table>
+          <br />
+
+          <h2>辰曦</h2>
+          <v-data-table :headers="headers" :items="status.morn" class="elevation-1" hide-default-footer
+            items-per-page="100"></v-data-table>
+
+        </div>
+      </v-row>
+      <v-row align="center" justify="center" length>
         <br />
-    
-        <h2>皓月</h2>
-        <v-data-table :headers="headers" :items="status.moon" class="elevation-1" hide-default-footer
-          items-per-page="100"></v-data-table>
-        <br />
-    
-        <h2>繁星</h2>
-        <v-data-table :headers="headers" :items="status.star" class="elevation-1" hide-default-footer
-          items-per-page="100"></v-data-table>
-        <br />
-    
-        <h2>辰曦</h2>
-        <v-data-table :headers="headers" :items="status.morn" class="elevation-1" hide-default-footer
-          items-per-page="100"></v-data-table>
-    
-      </div>
-    </v-row>
-    <v-row align="center" justify="center" length>
-      <br />
-    </v-row>
-  </v-container>
+      </v-row>
+    </v-container>
 
 
     <v-overlay v-if="initOverlay">
@@ -62,6 +61,7 @@
 <script>
 import About from "../components/About";
 import Announcement from "../components/Announcement.vue";
+import Announcement_Master from "../components/Announcement_master.vue";
 const axios = require("axios");
 var config = require("../../config.json");
 // let Base64 = require("js-base64").Base64;
@@ -81,8 +81,8 @@ export default {
       headers: [
         { text: "預約時間", value: "event_name" },
         { text: "最大預約數", value: "maxReserve" },
-        { text: "剩餘可預約數", value: "remainReserve" }, 
-        { text: "目前預約數", value: "haveReserve" }, 
+        { text: "剩餘可預約數", value: "remainReserve" },
+        { text: "目前預約數", value: "haveReserve" },
         { text: "報到人數", value: "checkin" },
       ],
     };
@@ -90,6 +90,7 @@ export default {
   components: {
     About,
     Announcement,
+    Announcement_Master,
   },
   methods: {
     verify_admin() {
@@ -164,7 +165,7 @@ export default {
           }
         });
     },
-    combineData(){
+    combineData() {
 
     }
   },
@@ -193,6 +194,7 @@ export default {
     filter: hue-rotate(-360deg);
   }
 }
+
 .rainbow-text {
   display: inline-block;
   position: relative;
