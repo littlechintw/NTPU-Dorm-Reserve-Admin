@@ -113,7 +113,7 @@ export default {
       let self = this;
       self.initOverlay = true;
       axios({
-        method: 'post',
+        method: 'get',
         url: config.apiurl + "/admin/delete_all_data",
         headers: {
           'Authorization': self.$cookie.get("token"),
